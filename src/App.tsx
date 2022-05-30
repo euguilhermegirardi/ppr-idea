@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import GlobalStyle from './styles/global';
+import Routes from './routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          PPR Idea.
-        </p>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => (
+  <>
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+
+    <GlobalStyle />
+  </>
+);
 
 export default App;
