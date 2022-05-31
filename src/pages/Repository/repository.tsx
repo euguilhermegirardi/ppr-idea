@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Header, RepositoryInfo, Issues } from './styles';
 import { RepositoryProps, Issue } from './models/repositoryProps';
-import logoImg from '../../assets/logo.png';
 
 const Repository = ({
     repository,
@@ -15,7 +14,6 @@ const Repository = ({
     return (
         <>
             <Header>
-                <img src={logoImg} alt="GitHub Explorer" />
                 <Link to="/">
                     <FiChevronLeft size={16} />
                     Voltar

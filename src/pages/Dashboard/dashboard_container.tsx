@@ -33,10 +33,10 @@ const Dashboard_container: FC = () => {
         }
 
         try {
-            const response = await api.get<DashboardRepositoryProps>(`repos/${newRepository}`);
+            const response = await api.get(`users/${newRepository}/repos`);
 
             const repository = response.data;
-            setRepositories([...repositories, repository]);
+            setRepositories(repository);
             setNewRepository('');
             setInputError('');
         } catch (err) {
