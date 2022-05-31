@@ -1,52 +1,17 @@
-import React, { FC, useEffect, useState } from 'react';
-import { useRouteMatch, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-
 import { Header, RepositoryInfo, Issues } from './styles';
-import api from '../../services/api';
-import logoImg from '../../assets/logo.svg';
+import { RepositoryProps, Issue } from './models/repositoryProps';
+import logoImg from '../../assets/logo.png';
 
-interface RepositoryParams {
-    repository: string;
-}
-
-interface Repository {
-    full_name: string;
-    description: string;
-    stargazers_count: number;
-    forks_count: number;
-    open_issues_count: number;
-    owner: {
-        login: string;
-        avatar_url: string;
-    };
-}
-
-interface Issue {
-    id: number;
-    title: string;
-    html_url: string;
-    user: {
-        login: string;
-    };
-}
-
-const Repository: FC = () => {
-    const [repository, setRepository] = useState<Repository | null>(null);
-    const [issues, setIssues] = useState<Issue[]>([]);
-
-    const { params } = useRouteMatch<RepositoryParams>();
-
-    useEffect(() => {
-        api.get(`repos/${params.repository}`).then(response => {
-            setRepository(response.data);
-        });
-
-        api.get(`repos/${params.repository}/issues`).then(response => {
-            setIssues(response.data);
-        });
-    }, [params.repository]);
-
+const Repository = ({
+    repository,
+    issues,
+}: {
+    repository: RepositoryProps | null;
+    issues: Issue[];
+}) => {
     return (
         <>
             <Header>
