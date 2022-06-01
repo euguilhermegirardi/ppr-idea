@@ -16,7 +16,7 @@ const Repository = ({
             <Header>
                 <Link to="/">
                     <FiChevronLeft size={16} />
-                    Voltar
+                    Back
                 </Link>
             </Header>
 
@@ -44,7 +44,7 @@ const Repository = ({
                         </li>
                         <li>
                             <strong>{repository.open_issues_count}</strong>
-                            <span>Issues abertas</span>
+                            <span>Issues</span>
                         </li>
                     </ul>
                 </RepositoryInfo>

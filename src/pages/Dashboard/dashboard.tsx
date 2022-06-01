@@ -1,9 +1,8 @@
 import React, { FormEvent, Dispatch } from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
-import { Title, Form, Repositories, Error } from './styles';
+import { FiChevronRight, FiSearch } from 'react-icons/fi';
+import { Title, TitleContainer, Form, Repositories, Error } from './styles';
 import { DashboardRepositoryProps } from './models/dashboardProps';
-//import logoImg from '../../assets/logo.png';
 
 const Dashboard = ({
     newRepository,
@@ -20,16 +19,17 @@ const Dashboard = ({
 }) => {
     return (
         <>
-            {/* <img src={logoImg} alt="GitHub Explorer" /> */}
-            <Title>Explore repositórios no GitHub</Title>
+            <TitleContainer>
+                <Title>Github Finder</Title>
+            </TitleContainer>
 
             <Form hasError={!!inputError} onSubmit={handleAddRepository}>
                 <input
                     value={newRepository}
                     onChange={e => setNewRepository(e.target.value)}
-                    placeholder="Digite o nome do repositório aqui"
+                    placeholder="Search a profile"
                 />
-                <button type="submit">Pesquisar</button>
+                <button type="submit"><FiSearch size={25} /></button>
             </Form>
 
             {inputError && <Error>{inputError}</Error>}

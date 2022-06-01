@@ -28,7 +28,7 @@ const Dashboard_container: FC = () => {
         event.preventDefault();
 
         if (!newRepository) {
-            setInputError('Você precisa digitar autor/nome do repositório');
+            setInputError('You need to type the author\'s name');
             return;
         }
 
@@ -40,7 +40,7 @@ const Dashboard_container: FC = () => {
             setNewRepository('');
             setInputError('');
         } catch (err) {
-            setInputError('Hmm... algo deu errado ao buscar esse repositório');
+            setInputError('Ops... something is wrong');
         }
     }
 

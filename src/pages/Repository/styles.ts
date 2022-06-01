@@ -9,10 +9,10 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #0566d6;
+    color: #031795;
     transition: color 0.2s;
     &:hover {
-      color: ${shade(0.5, '#0566d6')};
+      color: ${shade(0.5, '#031795')};
     }
     svg {
       margin-right: 4px;
@@ -34,7 +34,7 @@ export const RepositoryInfo = styled.section`
       margin-left: 24px;
       strong {
         font-size: 36px;
-        color: #0566d6;
+        color: #031795;
       }
       p {
         font-size: 18px;
@@ -89,7 +89,7 @@ export const Issues = styled.div`
       flex: 1;
       strong {
         font-size: 20px;
-        color: #0566d6;
+        color: #031795;
       }
       p {
         font-size: 18px;
@@ -99,7 +99,7 @@ export const Issues = styled.div`
     }
     svg {
       margin-left: auto;
-      color: #0566d6;
+      color: #031795;
     }
   }
 `;
