@@ -82,6 +82,7 @@ exports[`Repos should match snapshopt 1`] = `
     data-testid="issuesList"
   >
     <a
+      data-testid="anchor-tag"
       href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/21"
     >
       <div>
@@ -109,6 +110,7 @@ exports[`Repos should match snapshopt 1`] = `
       </svg>
     </a>
     <a
+      data-testid="anchor-tag"
       href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/20"
     >
       <div>
@@ -136,6 +138,7 @@ exports[`Repos should match snapshopt 1`] = `
       </svg>
     </a>
     <a
+      data-testid="anchor-tag"
       href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/19"
     >
       <div>

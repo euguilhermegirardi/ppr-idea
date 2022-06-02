@@ -53,7 +53,7 @@ const Repository = ({
 
             <Issues data-testid="issuesList">
                 {issues.map(issue => (
-                    <a key={issue.id} href={issue.html_url}>
+                    <a key={issue.id} href={issue.html_url} data-testid="anchor-tag">
                         <div>
                             <strong>{issue.title}</strong>
                             <p>{issue.user.login}</p>
