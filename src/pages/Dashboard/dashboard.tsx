@@ -1,6 +1,6 @@
 import { FC, useState, useEffect, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronRight } from 'react-icons/fi';
+import { FiChevronRight, FiSearch } from 'react-icons/fi';
 import { Title, Form, Repositories, Error } from './styles';
 import { DashboardRepositoryProps } from './models/dashboardProps';
 import api from '../../services/api';
@@ -30,7 +30,7 @@ const Dashboard_container: FC = () => {
         event.preventDefault();
 
         if (!newRepository) {
-            setInputError('Você precisa digitar autor/nome do repositório');
+            setInputError('You need to type the author\'s name');
             return;
         }
 
@@ -42,23 +42,21 @@ const Dashboard_container: FC = () => {
             setNewRepository('');
             setInputError('');
         } catch (err) {
-            setInputError('Hmm... algo deu errado ao buscar esse repositório');
+            setInputError('Ops... something is wrong');
         }
     }
 
     return (
         <>
-            <Title>Explore repositórios no GitHub</Title>
+            <Title>Search for a GitHub repository profile</Title>
 
             <Form hasError={!!inputError} onSubmit={handleAddRepository} data-testid="form">
                 <input
                     value={newRepository}
                     onChange={e => setNewRepository(e.target.value)}
-                    placeholder="Digite o nome do repositório aqui"
-                    type="text"
-                    aria-label="search-input"
+                    placeholder="Search a profile"
                 />
-                <button type="submit">Pesquisar</button>
+                <button type="submit"><FiSearch size={25} /></button>
             </Form>
 
             {inputError && <Error>{inputError}</Error>}
