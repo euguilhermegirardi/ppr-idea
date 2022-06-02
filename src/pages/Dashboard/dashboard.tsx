@@ -55,6 +55,7 @@ const Dashboard_container: FC = () => {
                     value={newRepository}
                     onChange={e => setNewRepository(e.target.value)}
                     placeholder="Search a profile"
+                    aria-label="search-input"
                 />
                 <button type="submit"><FiSearch size={25} /></button>
             </Form>

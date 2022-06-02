@@ -369,7 +369,7 @@ describe('Repos', () => {
 
     it('should find "back" text', () => {
         // Assert
-        const backTxt = screen.getByText('Voltar');
+        const backTxt = screen.getByText('Back');
 
         // Arrange
         expect(backTxt).toBeInTheDocument();
@@ -406,8 +406,15 @@ describe('Repos', () => {
     it('should show issues list', () => {
         const issueList = screen.getByTestId('issuesList');
 
-        console.log('CADE', issueList)
         // eslint-disable-next-line testing-library/no-node-access
-        expect(issueList.children).toHaveLength(3)
-    })
+        expect(issueList.children).toHaveLength(3);
+    });
+
+    it("should match snapshopt", () => {
+        // Assert
+        const { container } = element;
+
+        // Arrange
+        expect(container).toMatchSnapshot();
+    });
 });

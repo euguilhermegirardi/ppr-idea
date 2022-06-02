@@ -1,8 +1,6 @@
 import { MemoryRouter } from 'react-router-dom';
 import { fireEvent, render, RenderResult, screen } from '@testing-library/react';
 import Dashboard from '../dashboard';
-import { Form } from '../styles';
-
 
 describe('Dashboard', () => {
     let element: RenderResult;
@@ -23,7 +21,7 @@ describe('Dashboard', () => {
 
     it('should find the main title', () => {
         // Assert
-        const title = screen.getByText(/Explore repositórios no GitHub/i)
+        const title = screen.getByText(/Search for a GitHub repository profile/i)
 
         // Arrange
         expect(title).toBeInTheDocument();
@@ -46,35 +44,34 @@ describe('Dashboard', () => {
     //             console.log('onSubmit');
     //         });
 
-    //         const { container, getByTestId, getByText } = render(
-    //             <>
-    //                 <Form hasError={false} onSubmit={mockedFn} />
-    //             </>
-    //         );
-
-    //         console.log(container)
-
-    //         // eslint-disable-next-line testing-library/prefer-screen-queries
-    //         fireEvent.click(getByText('Pesquisar'));
-    //         expect(mockedFn).toHaveBeenCalled();
-
-    //         // const { getByText } = render(
-    //         //     <div>
-    //         //         <form id="form-id" onSubmit={mockedFn}>
-    //         //             <input />
-    //         //             <button form="form-id" type="submit">
-    //         //                 Submit
-    //         //             </button>
-    //         //         </form>
-    //         //     </div>
+    //         // const { container, getByTestId, getByText } = render(
+    //         //     <>
+    //         //         <Form hasError={false} onSubmit={mockedFn} />
+    //         //     </>
     //         // );
 
-    //         // eslint-disable-next-line testing-library/prefer-screen-queries
-    //         // fireEvent.click(getByText('Submit'));
+    //         // console.log(container)
+
+    //         // // eslint-disable-next-line testing-library/prefer-screen-queries
+    //         // fireEvent.click(getByText('Pesquisar'));
     //         // expect(mockedFn).toHaveBeenCalled();
+
+    //         const { getByText } = render(
+    //             <div>
+    //                 <form id="form-id" onSubmit={mockedFn}>
+    //                     <input />
+    //                     <button form="form-id" type="submit">
+    //                         Submit
+    //                     </button>
+    //                 </form>
+    //             </div>
+    //         );
+
+    //         // eslint-disable-next-line testing-library/prefer-screen-queries
+    //         fireEvent.click(getByText('Submit'));
+    //         expect(mockedFn).toHaveBeenCalled();
     //     });
     // })
-
 
     it("should match snapshopt", () => {
         // Assert

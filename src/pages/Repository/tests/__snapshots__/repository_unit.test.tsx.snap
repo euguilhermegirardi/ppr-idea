@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Repos should match snapshopt 1`] = `
+<div>
+  <header
+    class="sc-bczRLJ cbCuJc"
+  >
+    <a
+      href="/"
+    >
+      <svg
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="15 18 9 12 15 6"
+        />
+      </svg>
+      Back
+    </a>
+  </header>
+  <section
+    class="sc-gsnTZi gsjWsv"
+  >
+    <header>
+      <img
+        alt="euguilhermegirardi"
+        data-testid="image"
+        src="https://avatars.githubusercontent.com/u/48716406?v=4"
+      />
+      <div>
+        <strong
+          data-testid="full-name"
+        >
+          euguilhermegirardi/Aircnc-Backend
+        </strong>
+        <p />
+      </div>
+    </header>
+    <ul>
+      <li
+        data-testid="stars"
+      >
+        <strong>
+          1
+        </strong>
+        <span>
+          Stars
+        </span>
+      </li>
+      <li
+        data-testid="forks"
+      >
+        <strong>
+          0
+        </strong>
+        <span>
+          Forks
+        </span>
+      </li>
+      <li
+        data-testid="issues"
+      >
+        <strong>
+          0
+        </strong>
+        <span>
+          Issues
+        </span>
+      </li>
+    </ul>
+  </section>
+  <div
+    class="sc-dkzDqf cQhIhy"
+    data-testid="issuesList"
+  >
+    <a
+      href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/21"
+    >
+      <div>
+        <strong>
+          Bump eventsource from 1.0.7 to 1.1.1
+        </strong>
+        <p>
+          dependabot[bot]
+        </p>
+      </div>
+      <svg
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/20"
+    >
+      <div>
+        <strong>
+          Bump async from 2.6.3 to 2.6.4
+        </strong>
+        <p>
+          dependabot[bot]
+        </p>
+      </div>
+      <svg
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </a>
+    <a
+      href="https://github.com/euguilhermegirardi/Aircnc-Frontend/pull/19"
+    >
+      <div>
+        <strong>
+          Bump minimist from 1.2.5 to 1.2.6
+        </strong>
+        <p>
+          dependabot[bot]
+        </p>
+      </div>
+      <svg
+        fill="none"
+        height="20"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </a>
+  </div>
+</div>
+`;
