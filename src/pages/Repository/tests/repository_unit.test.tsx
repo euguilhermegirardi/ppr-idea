@@ -1,5 +1,5 @@
 import { MemoryRouter } from 'react-router-dom';
-import { render, RenderResult, screen } from '@testing-library/react';
+import { fireEvent, render, RenderResult, screen } from '@testing-library/react';
 import Repository from '../repository';
 import { mockRepository, mockIssues } from './models/repositoryProps';
 
@@ -64,6 +64,14 @@ describe('Repos', () => {
 
         // eslint-disable-next-line testing-library/no-node-access
         expect(issueList.children).toHaveLength(3);
+    });
+
+    it('should be able to click in anchor tag', () => {
+        // Assert
+        const link = screen.getAllByTestId('anchor-tag');
+
+        fireEvent.click(link[0]);
+        expect(window.location.href).toBe(mockIssues.url);
     });
 
     it("should match snapshopt", () => {
