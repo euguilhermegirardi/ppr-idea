@@ -36,48 +36,11 @@ describe('Dashboard', () => {
         expect(input.value).toBe('Barbosa, Gabs');
     });
 
-    // describe('onSubmit', () => {
-    //     it('should be able to submit form', async () => {
-    //         // Assert
-    //         // const onSubmit = jest.fn();
-    //         const mockedFn = jest.fn(() => {
-    //             console.log('onSubmit');
-    //         });
-
-    //         // const { container, getByTestId, getByText } = render(
-    //         //     <>
-    //         //         <Form hasError={false} onSubmit={mockedFn} />
-    //         //     </>
-    //         // );
-
-    //         // console.log(container)
-
-    //         // // eslint-disable-next-line testing-library/prefer-screen-queries
-    //         // fireEvent.click(getByText('Pesquisar'));
-    //         // expect(mockedFn).toHaveBeenCalled();
-
-    //         const { getByText } = render(
-    //             <div>
-    //                 <form id="form-id" onSubmit={mockedFn}>
-    //                     <input />
-    //                     <button form="form-id" type="submit">
-    //                         Submit
-    //                     </button>
-    //                 </form>
-    //             </div>
-    //         );
-
-    //         // eslint-disable-next-line testing-library/prefer-screen-queries
-    //         fireEvent.click(getByText('Submit'));
-    //         expect(mockedFn).toHaveBeenCalled();
-    //     });
-    // })
-
     it("should match snapshopt", () => {
         // Assert
         const { container } = element;
-        // Arrange
 
+        // Arrange
         expect(container).toMatchSnapshot();
     });
 });
