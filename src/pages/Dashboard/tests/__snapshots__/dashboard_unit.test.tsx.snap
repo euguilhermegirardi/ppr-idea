@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dashboard should match snapshopt 1`] = `
+<div>
+  <h1
+    class="sc-bczRLJ lmUuWV"
+  >
+    Explore repositórios no GitHub
+  </h1>
+  <form
+    class="sc-gsnTZi iipXii"
+    data-testid="form"
+  >
+    <input
+      aria-label="search-input"
+      placeholder="Digite o nome do repositório aqui"
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Pesquisar
+    </button>
+  </form>
+  <div
+    class="sc-dkzDqf gxjgLD"
+  />
+</div>
+`;

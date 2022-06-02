@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Header, RepositoryInfo, Issues } from './styles';
@@ -11,6 +10,7 @@ const Repository = ({
     repository: RepositoryProps | null;
     issues: Issue[];
 }) => {
+
     return (
         <>
             <Header>
@@ -26,23 +26,24 @@ const Repository = ({
                         <img
                             src={repository.owner.avatar_url}
                             alt={repository.owner.login}
+                            data-testid="image"
                         />
                         <div>
-                            <strong>{repository.full_name}</strong>
+                            <strong data-testid="full-name">{repository.full_name}</strong>
                             <p>{repository.description}</p>
                         </div>
                     </header>
 
                     <ul>
-                        <li>
+                        <li data-testid="stars">
                             <strong>{repository.stargazers_count}</strong>
                             <span>Stars</span>
                         </li>
-                        <li>
+                        <li data-testid="forks">
                             <strong>{repository.forks_count}</strong>
                             <span>Forks</span>
                         </li>
-                        <li>
+                        <li data-testid="issues">
                             <strong>{repository.open_issues_count}</strong>
                             <span>Issues abertas</span>
                         </li>
@@ -50,7 +51,7 @@ const Repository = ({
                 </RepositoryInfo>
             )}
 
-            <Issues>
+            <Issues data-testid="issuesList">
                 {issues.map(issue => (
                     <a key={issue.id} href={issue.html_url}>
                         <div>

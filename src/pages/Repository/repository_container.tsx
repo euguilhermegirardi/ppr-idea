@@ -1,5 +1,5 @@
-import React, { FC, useEffect, useState } from 'react';
-import { useParams, useRouteMatch, } from 'react-router-dom';
+import { FC, useEffect, useState } from 'react';
+import { useRouteMatch, } from 'react-router-dom';
 import Repository from './repository';
 import { RepositoryProps, Issue } from './models/repositoryProps';
 import api from '../../services/api';

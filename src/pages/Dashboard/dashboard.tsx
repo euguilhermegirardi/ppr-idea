@@ -1,33 +1,62 @@
-import React, { FormEvent, Dispatch } from 'react';
+import { FC, useState, useEffect, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FiChevronRight } from 'react-icons/fi';
 import { Title, Form, Repositories, Error } from './styles';
 import { DashboardRepositoryProps } from './models/dashboardProps';
-//import logoImg from '../../assets/logo.png';
+import api from '../../services/api';
 
-const Dashboard = ({
-    newRepository,
-    inputError,
-    repositories,
-    handleAddRepository,
-    setNewRepository,
-}: {
-    newRepository: string;
-    inputError: string;
-    repositories: DashboardRepositoryProps[];
-    handleAddRepository: (event: FormEvent<HTMLFormElement>) => Promise<void>;
-    setNewRepository: Dispatch<React.SetStateAction<string>>;
-}) => {
+const Dashboard_container: FC = () => {
+    const [newRepository, setNewRepository] = useState('');
+    const [inputError, setInputError] = useState('');
+    const [repositories, setRepositories] = useState<DashboardRepositoryProps[]>(() => {
+        const storageRepositories = localStorage.getItem(
+            '@GitHubExplorer:repositories',
+        );
+
+        if (storageRepositories) {
+            return JSON.parse(storageRepositories);
+        }
+        return [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem(
+            '@GitHubExplorer:repositories',
+            JSON.stringify(repositories),
+        );
+    }, [repositories]);
+
+    async function handleAddRepository(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+
+        if (!newRepository) {
+            setInputError('Você precisa digitar autor/nome do repositório');
+            return;
+        }
+
+        try {
+            const response = await api.get(`users/${newRepository}/repos`);
+
+            const repository = response.data;
+            setRepositories(repository);
+            setNewRepository('');
+            setInputError('');
+        } catch (err) {
+            setInputError('Hmm... algo deu errado ao buscar esse repositório');
+        }
+    }
+
     return (
         <>
-            {/* <img src={logoImg} alt="GitHub Explorer" /> */}
             <Title>Explore repositórios no GitHub</Title>
 
-            <Form hasError={!!inputError} onSubmit={handleAddRepository}>
+            <Form hasError={!!inputError} onSubmit={handleAddRepository} data-testid="form">
                 <input
                     value={newRepository}
                     onChange={e => setNewRepository(e.target.value)}
                     placeholder="Digite o nome do repositório aqui"
+                    type="text"
+                    aria-label="search-input"
                 />
                 <button type="submit">Pesquisar</button>
             </Form>
@@ -57,4 +86,4 @@ const Dashboard = ({
     );
 };
 
-export default Dashboard;
+export default Dashboard_container;
